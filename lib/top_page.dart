@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prov1/model.dart';
+import 'package:prov1/model_change.dart';
 import 'package:provider/provider.dart';
 
 
@@ -30,7 +30,7 @@ class TopPage extends StatelessWidget {
           ],
         ),
 
-        body: Consumer<Model>(builder: (context, model, child){
+        body: Consumer<ModelChange>(builder: (context, model, child){
           /// [model.dart/Model()/return todoList -> model]
           return Center(
             child: Column(

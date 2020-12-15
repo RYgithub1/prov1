@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 
 
-class Model extends ChangeNotifier {
+class ModelProv1 extends ChangeNotifier {
 
   List<Map> todoList = [
     {"name": "START NOW"},
-    // {"id": 1, "name": "pikachu"},
-    // {"id": 2, "name": "hitokage"},
-    // {"id": 3, "name": "zenigame"},
-    // {"id": 4, "name": "hushigidane"},
   ];
 
   /// [ADD]

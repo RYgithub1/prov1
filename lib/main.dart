@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:prov1/model_prov1.dart';
+import 'package:prov1/model_prov2.dart';
 import 'package:prov1/top_page.dart';
 import 'package:provider/provider.dart';
-import 'model.dart';
+import 'model_change.dart';
 
 
 void main(List<String> args) {
@@ -24,8 +26,16 @@ class MyToDoApp extends StatelessWidget {
     // )
     return MultiProvider(   /// [MULTI]
       providers: [
-        ChangeNotifierProvider(
-          create: (context) => Model(),
+        // ChangeNotifierProvider(
+        ChangeNotifierProvider<ModelChange>(
+          create: (context) => ModelChange(),
+        ),
+        Provider<ModelProv1>(
+          // create: (_) => ModelProv1(),
+          create: (context) => ModelProv1(),
+        ),
+        Provider<ModelProv2>(
+          create: (context) => ModelProv2(),
         ),
       ],
       child: MaterialApp(
