@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:prov1/model_change.dart';
+import 'package:prov1/next_page.dart';
 import 'package:provider/provider.dart';
 
 
+
 class TopPage extends StatelessWidget {
-  int indexInt;
 
   @override
   Widget build(BuildContext context) {
@@ -81,6 +82,15 @@ class TopPage extends StatelessWidget {
             ),
           );
         }),
+
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.offline_bolt),
+          onPressed: () => Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => NextPage(),
+            ),
+          ),
+        ),
       ),
     );
   }
