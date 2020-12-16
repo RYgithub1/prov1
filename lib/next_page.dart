@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prov1/third_page.dart';
 import 'package:provider/provider.dart';
 
 
@@ -51,6 +52,14 @@ class NextPageChild extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.fire_extinguisher),
+          onPressed: () => Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => ThirdPage(),
+            ),
+          ),
       ),
     );
   }

@@ -31,7 +31,7 @@ class TopPage extends StatelessWidget {
           ],
         ),
 
-        body: Consumer<ModelChange>(builder: (context, model, child){
+        body: Consumer<ModelChange>(builder: (context, model, child){   /// [Consumer配下だけリビルド]
           /// [model.dart/Model()/return todoList -> model]
           return Center(
             child: Column(

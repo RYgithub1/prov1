@@ -12,7 +12,6 @@ void main(List<String> args) {
 
 
 class MyToDoApp extends StatelessWidget {
-  const MyToDoApp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
