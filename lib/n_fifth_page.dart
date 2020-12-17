@@ -17,6 +17,7 @@ class _FifthPageState extends State<FifthPage> {
   /// [=== build() ===]
   @override
   Widget build(BuildContext context) {
+    /// [Provider<T>.value で下位ツリーにデータ受け渡し]
     return Provider<String>.value(   /// [-- Provider<String>.valueへ変更  --]
       value: _createMessage(),   /// [-- create -> value --]
       child: Scaffold(
@@ -62,6 +63,7 @@ class _Message extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text("FIZZBUZZ", style: TextStyle(fontSize: 40)),
+            /// [データへのアクセス・監視に Provider.of<T>]
             Text(
               "No. ${Provider.of<String>(context, listen: true)}",   /// [-- Providerに変更 --]
               style: TextStyle(fontSize: 28),
