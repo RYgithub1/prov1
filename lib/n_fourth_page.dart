@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prov1/n_fifth_page.dart';
 
 
 
@@ -11,7 +12,7 @@ class FourthPage extends StatefulWidget {   /// [_countのデータ受け渡し�
 
 
 class _FourthPageState extends State<FourthPage> {
-  var _count = 0;
+  var _count = 1;
 
   /// [=== build() ===]
   @override
@@ -20,8 +21,18 @@ class _FourthPageState extends State<FourthPage> {
       message: _createMessage(),
       child: Scaffold(
         appBar: AppBar(
-          title: Text("4th : FizzBuzz_inher"),
+          title: Text("4.InheritedWidget"),
           centerTitle: true,
+          actions: [
+            IconButton(
+              icon: Icon(Icons.arrow_forward),
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => FifthPage(),
+                ),
+              ),
+            )
+          ],
         ),
         body: const _Message(),   /// [rebuild抑制const]
         floatingActionButton: FloatingActionButton(
@@ -60,9 +71,10 @@ class _Message extends StatelessWidget{
     return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text("FIZZBUZZ", style: TextStyle(fontSize: 40)),
             Text(
               "No. ${_InheritedWidget.of(context, listen: true).message}",
-              style: TextStyle(fontSize: 44),
+              style: TextStyle(fontSize: 28),
             ),
           ],
         );

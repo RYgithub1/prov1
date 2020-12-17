@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
-import 'package:prov1/third_page.dart';
+import 'package:prov1/n_third_page.dart';
 import 'package:provider/provider.dart';
 
 
@@ -16,7 +16,7 @@ class CountData extends ChangeNotifier{   /// [渡すデータ(変更可能)の�
 }
 
 
-class NextPage extends StatelessWidget {
+class SecondPage extends StatelessWidget {
   final countData = CountData();   /// [渡すデータ]
   @override
   Widget build(BuildContext context) {
@@ -26,21 +26,37 @@ class NextPage extends StatelessWidget {
       value: countData,
       // value: "data for descendants",
       child: Container(
-        child: _NextPageChild(),
+        child: _SecondPageChild(),
       ),
     );
   }
 }
 
 
-class _NextPageChild extends StatelessWidget {
+class _SecondPageChild extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     /// [受けるデータのクラス と <T> は揃える]
     final CountData countDataYa = Provider.of<CountData>(context);   /// [Provider.of<T>()]
     return Scaffold(
-      appBar: AppBar(title: Text("COUNTER"), centerTitle: true),
+      appBar: AppBar(
+        title: Text(
+          "2.ChangeNotifierProvider<T>.value()",
+          style: TextStyle(fontSize: 16),
+        ),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.arrow_forward),
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => ThirdPage(),
+              ),
+            ),
+          ),
+        ],
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -55,14 +71,6 @@ class _NextPageChild extends StatelessWidget {
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.fire_extinguisher),
-          onPressed: () => Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => ThirdPage(),
-            ),
-          ),
       ),
     );
   }

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:prov1/model_change.dart';
-import 'package:prov1/next_page.dart';
+import 'package:prov1/n_second_page.dart';
 import 'package:provider/provider.dart';
 
 
 
-class TopPage extends StatelessWidget {
+class FirstPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -17,16 +17,16 @@ class TopPage extends StatelessWidget {
             icon: Icon(Icons.arrow_back),
             onPressed: (){print("BACK");},
           ),
-          title: Text("provider gogo"),
+          title: Text("1.ChangeNotifierProvider<T>()"),
           centerTitle: true,
           actions: <Widget>[
             IconButton(
-              icon: Icon(Icons.play_arrow),
-              onPressed: (){print("PLAY");},
-            ),
-            IconButton(
-              icon: Icon(Icons.pause),
-              onPressed: (){print("PAUSE");},
+              icon: Icon(Icons.arrow_forward),
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => SecondPage(),
+                ),
+              ),
             ),
           ],
         ),
@@ -82,15 +82,6 @@ class TopPage extends StatelessWidget {
             ),
           );
         }),
-
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.offline_bolt),
-          onPressed: () => Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => NextPage(),
-            ),
-          ),
-        ),
       ),
     );
   }

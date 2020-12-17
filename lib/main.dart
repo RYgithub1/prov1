@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prov1/model_prov1.dart';
 import 'package:prov1/model_prov2.dart';
-import 'package:prov1/top_page.dart';
+import 'package:prov1/n_first_page.dart';
 import 'package:provider/provider.dart';
 import 'model_change.dart';
 
@@ -41,7 +41,7 @@ class MyToDoApp extends StatelessWidget {
         title: "provider",
         theme: ThemeData.dark(),
         initialRoute: "/",
-        routes: {"/": (content) => TopPage()},
+        routes: {"/": (content) => FirstPage()},
       )
     );
   }

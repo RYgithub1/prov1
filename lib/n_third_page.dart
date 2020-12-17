@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prov1/fourth_page.dart';
+import 'package:prov1/n_fourth_page.dart';
 import 'package:provider/provider.dart';
 
 
@@ -24,7 +24,7 @@ class ThirdPage extends StatelessWidget {
 
       child: Scaffold(
         appBar: AppBar(
-          title: Text('%   Calc Discount   %'),
+          title: Text('3.ChangeNotifierProvider<T>()'),
           centerTitle: true,
           actions: [
             IconButton(
@@ -41,6 +41,10 @@ class ThirdPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              Text(
+                'Calc Discount',
+                style: TextStyle(fontSize: 24),
+              ),
               Text("What's the discount on this item?"),
               CalcText(),  /// [-> Provider.of<T>()]
             ],
