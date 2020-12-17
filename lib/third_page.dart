@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prov1/fourth_page.dart';
 import 'package:provider/provider.dart';
 
 
@@ -16,13 +17,26 @@ class ThirdPage extends StatelessWidget {
   /// [--- build() ---]
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(   /// [ChangeNotifierProvider()] #childでaccept可の宣言
+    return ChangeNotifierProvider<CalcModel>(   /// [ChangeNotifierProvider<T>()] #childでaccept可の宣言
 
       create: (context) => CalcModel(),  /// [Class T extends ChanegNotifier{}]
-      // builder: (_) => CalcModel(),
+      // builder: (context) => CalcModel(),  // "v4.0.0"以降builder->createに変更
 
       child: Scaffold(
-        appBar: AppBar(title: Text('%   Calc Discount   %'), centerTitle: true),
+        appBar: AppBar(
+          title: Text('%   Calc Discount   %'),
+          centerTitle: true,
+          actions: [
+            IconButton(
+              icon: Icon(Icons.arrow_forward),
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => FourthPage(),
+                ),
+              ),
+            ),
+          ],
+        ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -32,7 +46,7 @@ class ThirdPage extends StatelessWidget {
             ],
           ),
         ),
-        floatingActionButton: Consumer<CalcModel>(   /// [Consumer<T>() rebuild for ancestor]
+        floatingActionButton: Consumer<CalcModel>(   /// [Consumer<T>()] rebuild for ancestor
           // builder: (_, model, __) {
           builder: (context, model, child){
             return FloatingActionButton(

@@ -23,7 +23,7 @@ class MyToDoApp extends StatelessWidget {
     //   ],
     //   child: someWidget,
     // )
-    return MultiProvider(   /// [MULTI]
+    return MultiProvider(   /// [MULTI = nest]
       providers: [
         // ChangeNotifierProvider(
         ChangeNotifierProvider<ModelChange>(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/semantics.dart';
 import 'package:prov1/third_page.dart';
 import 'package:provider/provider.dart';
 
@@ -23,15 +24,17 @@ class NextPage extends StatelessWidget {
     // return Provider<CountData>.value(   /// [Provider<T>.value()]
     return ChangeNotifierProvider<CountData>.value(   /// [ChangeNotifierProvider<T>.value()]
       value: countData,
+      // value: "data for descendants",
       child: Container(
-        child: NextPageChild(),
+        child: _NextPageChild(),
       ),
     );
   }
 }
 
 
-class NextPageChild extends StatelessWidget {
+class _NextPageChild extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     /// [受けるデータのクラス と <T> は揃える]
