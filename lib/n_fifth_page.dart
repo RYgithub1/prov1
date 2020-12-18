@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prov1/n_sixth_page.dart';
 import 'package:provider/provider.dart';
 
 
@@ -24,6 +25,16 @@ class _FifthPageState extends State<FifthPage> {
         appBar: AppBar(
           title: Text("5.Provider<T>.value"),
           centerTitle: true,
+          actions: [
+            IconButton(
+              icon: Icon(Icons.arrow_forward),
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => SixthPage(),
+                ),
+              ),
+            ),
+          ],
         ),
         body: const _Message(),   /// [rebuild抑制const]
         floatingActionButton: FloatingActionButton(
