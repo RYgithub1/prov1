@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prov1/n_seventh_page.dart';
 import 'package:provider/provider.dart';
 
 
@@ -16,6 +17,16 @@ class SixthPage extends StatelessWidget {
             style: TextStyle(fontSize:16),
           ),
           centerTitle: true,
+          actions: [
+            IconButton(
+              icon: Icon(Icons.arrow_forward),
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => SeventhPage(),
+                ),
+              ),
+            ),
+          ],
         ),
         body: Center(child: ChildWidget1()),
         floatingActionButton: FloatingActionButton(
